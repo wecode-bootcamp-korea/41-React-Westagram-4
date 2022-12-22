@@ -1,6 +1,5 @@
 import React from "react";
 import "./Login.scss";
-import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
@@ -10,14 +9,14 @@ function Loginkimjinwoo() {
   let [isActive, setIsActive] = useState(false);
   const navigate = useNavigate();
 
-  // const isValidLogin = () => {
-  //   return userId.includes("@") && userPw.length > 4
-  //     ? setIsActive(true)
-  //     : setIsActive(false);
-  // };
+  const isValidLogin = () => {
+    return userId.includes("@") && userPw.length > 4
+      ? setIsActive(true)
+      : setIsActive(false);
+  };
 
   const goToMain = () => {
-    navigate("/main");
+    navigate("/Mainkimjinwoo");
   };
 
   const saveUserId = event => {
@@ -37,7 +36,7 @@ function Loginkimjinwoo() {
         type="text"
         placeholder="전화번호, 사용자  이름 또는 이메일"
         onChange={saveUserId}
-        // onKeyUp={isValidLogin}
+        onKeyUp={isValidLogin}
       />
 
       <input
@@ -45,14 +44,14 @@ function Loginkimjinwoo() {
         type="password"
         placeholder="비밀번호"
         onChange={saveUserPw}
-        // onKeyUp={isValidLogin}
+        onKeyUp={isValidLogin}
       />
 
       <button
         type="button"
         className={isActive ? "activeBtn" : "unActiveBtn"}
         onClick={goToMain}
-        // disabled={userId === "" || userPw === "" ? true : false}
+        disabled={userId === "" || userPw === "" ? true : false}
       >
         로그인
       </button>
