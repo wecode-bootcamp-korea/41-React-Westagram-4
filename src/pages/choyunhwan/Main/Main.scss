@@ -1,0 +1,528 @@
+* {
+  box-sizing: border-box;
+}
+@mixin ColumFlex {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin Flex($justify, $align) {
+  display: flex;
+  justify-content: $justify;
+  align-content: $align;
+}
+@mixin imgCircle {
+  border-radius: 70%;
+  overflow: hidden;
+  height: 30px;
+}
+@mixin fontsize14top10 {
+  font-size: 14px;
+}
+@mixin margin5 {
+  margin-left: 5px;
+}
+@mixin margin($margin) {
+  margin: $margin;
+}
+
+.menubar {
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 1px solid black;
+  padding-bottom: 10px;
+}
+.logo {
+  @include Flex("null", "null");
+  .westalogo {
+    height: 30px;
+
+    @include margin(auto 10px);
+  }
+  .westa {
+    border-left: solid;
+    padding-left: 5px;
+    font-family: "Lobster";
+    font-size: 20px;
+
+    @include margin(0 20px 0 0);
+  }
+}
+.searchbar {
+  height: 30px;
+  width: 200px;
+  @include margin(auto 0);
+}
+.navicon {
+  height: 30px;
+  @include Flex("null", "null");
+  @include margin(auto 100px);
+}
+
+main {
+  background-color: #fafafa;
+  display: flex;
+  justify-content: center;
+  .feeds {
+    .articleborder {
+      border: 1px solid gainsboro;
+      @include margin(30px 0 0 0);
+      width: 470px;
+      .articleTop {
+        background-color: white;
+        display: flex;
+        width: 470px;
+        height: 56px;
+        .profile {
+          @include imgCircle;
+          @include margin(10px 5px 0);
+        }
+        .dot {
+          width: 10px;
+          @include margin(0 0 0 390px);
+        }
+      }
+      .articleCenter {
+        .feedimg {
+          width: 470px;
+          height: 470px;
+        }
+        #heartIcon {
+          //&:.iconsize
+          height: 20px;
+        }
+        .imoticon {
+          #heart.iconsize {
+            @include margin(0 0 0 5px);
+            height: 20px;
+          }
+          #ICONSIZE {
+            @include margin(0 0 0 5px);
+            height: 20px;
+            &:last-child {
+              @include margin(0 0 0 5px);
+            }
+          }
+        }
+      }
+      .commentwindow {
+        .feedLikeNum {
+          @include Flex("null", "null");
+        }
+        .feedcomentimg {
+          @include imgCircle;
+          width: 35px;
+          @include margin(0 0 30px 0);
+        }
+        .feedLikeNumfont {
+          font-size: 14px;
+        }
+        .LIST {
+          .commentList {
+            @include margin(-15px 0 0 0);
+            list-style: none;
+          }
+        }
+      }
+      .comment {
+        .commentinput {
+          width: 470px;
+          height: 49px;
+          position: relative;
+          outline: none;
+        }
+        #commentInput.commentUD {
+          position: absolute;
+          @include margin(-30px 0 0 430px);
+          color: skyblue;
+          border: none;
+          padding: 0;
+          background: none;
+        }
+      }
+    }
+  }
+}
+
+.right {
+  @include margin(0 0 0 30px);
+  .main-right {
+    @include Flex("null", "column");
+    .myprofile {
+      @include margin(30px 0 20px 0);
+      display: flex;
+      width: 319px;
+      height: 56px;
+
+      .profile {
+        @include imgCircle;
+        @include margin(10px 5px 0 5px);
+      }
+      .name {
+        padding-left: 0px;
+      }
+    }
+  }
+  .story {
+    width: 347px;
+    height: 186px;
+    border: 1px solid rgb(207, 204, 204);
+    border-radius: 6px;
+    @include ColumFlex;
+    .storyMenu {
+      display: flex;
+
+      .storyFontMenu.sfMenu {
+        font-size: 14px;
+        @include margin(10px 0 0 20px);
+      }
+      .storyFontMenu.sfMenu2 {
+        font-size: 14px;
+        @include margin(10px 0 0 220px);
+      }
+    }
+  }
+  .IDTIME {
+    .story_ID {
+      width: 347px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      @include margin(9px 0 0 10px);
+      &:ntn-child(2) {
+        @include margin(20px 0 0 0);
+      }
+      .story_profile {
+        @include imgCircle;
+        @include margin(0 0 0 10px);
+        width: 35px;
+      }
+      .storyFontContainer {
+        @include margin(0 0 0 5px);
+        @include ColumFlex;
+        .story-font {
+          font-size: 14px;
+        }
+        .story-font.fontlightgray {
+          font-size: 14px;
+          color: rgb(207, 204, 204);
+        }
+      }
+    }
+  }
+
+  .recomand {
+    margin-top: 150px;
+    @include margin(150px 0 0 0);
+    width: 347px;
+    // height: 180px;
+    //  border: 1px solid rgb(207, 204, 204);
+    border-radius: 6px;
+    .storyMenu {
+      .storyFontMenu.reMenu {
+        @include fontsize14top10;
+        @include margin(0 0 0 10px);
+      }
+      .storyFontMenu.reMenu2 {
+        @include fontsize14top10;
+        @include margin(10px 0 0 170px);
+      }
+    }
+    .story_ID {
+      width: 347px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+
+      flex-wrap: wrap;
+      margin-top: 9px;
+      @include margin(9px 0 0 0);
+      .story_profile {
+        @include imgCircle;
+        width: 35px;
+        @include margin(0 0 0 10px);
+      }
+      .storyFontContainer {
+        @include ColumFlex;
+        @include margin(0 0 0 5px);
+        .story-font {
+          font-size: 14px;
+        }
+        .story-font.fontlightgray {
+          font-size: 14px;
+          color: rgb(207, 204, 204);
+        }
+        .fallow {
+          font-size: 14px;
+          @include margin(-25px 0 0 0240px);
+          color: #2c9ef7;
+        }
+      }
+    }
+  }
+}
+
+.explain.fontlightgray {
+  @include margin(150px 0 0 0);
+
+  font-size: 15px;
+  color: rgb(207, 204, 204);
+  .WESTAGRAM {
+    @include margin(10px 0 0 0);
+  }
+}
+
+// * {
+//   box-sizing: border-box;
+// }
+
+// .menubar {
+//   display: flex;
+//   justify-content: space-evenly;
+//   border-bottom: 1px solid black;
+//   padding-bottom: 10px;
+// }
+// .logo {
+//   display: flex;
+//   .westalogo {
+//     height: 30px;
+
+//     @include margin(auto 0);
+//   }
+//   .westa {
+//     border-left: solid;
+//     padding-left: 5px;
+//     font-size: 20px;
+//     font-family: "Lobstar";
+
+//     @include margin(0 20px 0 0);
+//   }
+// }
+// .searchbar {
+//   height: 30px;
+//   width: 200px;
+//   @include margin(auto 0);
+// }
+// .navicon {
+//   height: 30px;
+//   display: flex;
+//   @include margin(auto 0);
+// }
+
+// main {
+//   background-color: #fafafa;
+//   display: flex;
+//   justify-content: center;
+
+//   .feeds {
+//     .articleborder {
+//       border: 1px solid gainsboro;
+//       @include margin(30px 0 0 0);
+//       width: 470px;
+//       .articleTop {
+//         background-color: white;
+//         display: flex;
+//         width: 470px;
+//         height: 56px;
+//         .profile {
+//           @include imgCircle;
+//           @include margin(10px 5px 0);
+//         }
+//         .dot {
+//           width: 10px;
+//           @include margin(0 0 0 390px);
+//         }
+//       }
+//       .articleCenter {
+//         .feedimg {
+//           width: 470px;
+//           height: 470px;
+//         }
+//         #heartIcon {
+//           //&:.iconsize
+//           height: 20px;
+//         }
+//         .imoticon {
+//           #heart.iconsize {
+//             @include margin(0 0 0 5px);
+//             height: 20px;
+//           }
+//           #ICONSIZE {
+//             @include margin(0 0 0 5px);
+//             height: 20px;
+//             &:last-child {
+//               @include margin(0 0 0 5px);
+//             }
+//           }
+//         }
+//       }
+//       .commentwindow {
+//         .feedLikeNum {
+//           display: flex;
+//         }
+//         .feedcomentimg {
+//           @include imgCircle;
+//           width: 35px;
+//           @include margin(0 0 30px 0);
+//         }
+//         .feedLikeNumfont {
+//           font-size: 14px;
+//         }
+//         .LIST {
+//           .commentList {
+//             @include margin(-15px 0 0 0);
+//             list-style: none;
+//           }
+//         }
+//       }
+//       .comment {
+//         .commentinput {
+//           width: 470px;
+//           height: 49px;
+//           position: relative;
+//           outline: none;
+//         }
+//         #commentInput.commentUD {
+//           position: absolute;
+//           @include margin(-30px 0 0 430px);
+//           color: skyblue;
+//           border: none;
+//           padding: 0;
+//           background: none;
+//         }
+//       }
+//     }
+//   }
+// }
+
+// .right {
+//   @include margin(0 0 0 30px);
+//   .main-right {
+//     @include ColumFlex;
+//     .myprofile {
+//       @include margin(30px 0 20px 0);
+//       display: flex;
+//       width: 319px;
+//       height: 56px;
+
+//       .profile {
+//         @include imgCircle;
+//         @include margin(10px 5px 0 5px);
+//       }
+//       .name {
+//         padding-left: 0px;
+//       }
+//     }
+//   }
+//   .story {
+//     width: 347px;
+//     height: 186px;
+//     border: 1px solid rgb(207, 204, 204);
+//     border-radius: 6px;
+//     @include ColumFlex;
+//     .storyMenu {
+//       display: flex;
+
+//       .storyFontMenu.sfMenu {
+//         font-size: 14px;
+//         @include margin(10px 0 0 20px);
+//       }
+//       .storyFontMenu.sfMenu2 {
+//         font-size: 14px;
+//         @include margin(10px 0 0 220px);
+//       }
+//     }
+//   }
+//   .IDTIME {
+//     @include ColumFlex;
+//     .story_ID {
+//       width: 347px;
+//       height: 48px;
+//       display: flex;
+//       align-items: center;
+//       flex-wrap: wrap;
+
+//       @include margin(9px 0 0 0);
+//       &:ntn-child(2) {
+//         @include margin(20px 0 0 0);
+//       }
+//       .story_profile {
+//         @include imgCircle;
+//         @include margin(0 0 0 10px);
+//         width: 35px;
+//       }
+//       .storyFontContainer {
+//         @include margin(0 0 0 5px);
+//         @include ColumFlex;
+//         .story-font {
+//           font-size: 14px;
+//         }
+//         .story-font.fontlightgray {
+//           font-size: 14px;
+//           color: rgb(207, 204, 204);
+//         }
+//       }
+//     }
+//   }
+
+//   .recomand {
+//     margin-top: 150px;
+//     @include margin(150px 0 0 0);
+//     width: 347px;
+//     // height: 180px;
+//     //  border: 1px solid rgb(207, 204, 204);
+//     border-radius: 6px;
+//     .storyMenu {
+//       .storyFontMenu.reMenu {
+//         @include fontsize14top10;
+//         @include margin(0 0 0 10px);
+//       }
+//       .storyFontMenu.reMenu2 {
+//         @include fontsize14top10;
+//         @include margin(10px 0 0 170px);
+//       }
+//     }
+//     .story_ID {
+//       width: 347px;
+//       height: 48px;
+//       display: flex;
+//       align-items: center;
+
+//       flex-wrap: wrap;
+//       margin-top: 9px;
+//       @include margin(9px 0 0 0);
+//       .story_profile {
+//         @include imgCircle;
+//         width: 35px;
+//         @include margin(0 0 0 10px);
+//       }
+//       .storyFontContainer {
+//         @include ColumFlex;
+//         @include margin(0 0 0 5px);
+//         .story-font {
+//           font-size: 14px;
+//         }
+//         .story-font.fontlightgray {
+//           font-size: 14px;
+//           color: rgb(207, 204, 204);
+//         }
+//         .fallow {
+//           font-size: 14px;
+//           @include margin(-25px 0 0 0240px);
+//           color: #2c9ef7;
+//         }
+//       }
+//     }
+//   }
+// }
+
+// .explain.fontlightgray {
+//   @include margin(150px 0 0 0);
+
+//   font-size: 15px;
+//   color: rgb(207, 204, 204);
+//   .WESTAGRAM {
+//     @include margin(10px 0 0 0);
+//   }
+// }
