@@ -1,6 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
+import Comment from "./Comment";
 
 function Feeds() {
+  const [comment, setComment] = useState("");
+  const [commentLi, setCommentLi] = useState([]);
+  const onChange = e => {
+    setComment(e.target.value);
+  };
+
+  const onSubmit = e => {
+    e.preventDefault();
+    setCommentLi([...commentLi, comment]);
+    setComment("");
+  };
   return (
     <div className="feeds">
       <article className="articleborder">
@@ -61,18 +73,30 @@ function Feeds() {
               </span>
             </div>
             <div className="LIST">
-              <ul className="commentList" />
+              <ul className="commentList">
+                {commentLi.map((i, key) => (
+                  <Comment i={i} key={key} />
+                ))}
+              </ul>
             </div>
           </div>
           <div className="comment">
-            <input
-              className="commentinput"
-              type="text"
-              placeholder="댓글 달기..."
-            />
-            <button id="commentInput" className="commentUD unstyled-button">
-              게시
-            </button>
+            <form>
+              <input
+                className="commentinput"
+                type="text"
+                value={comment}
+                onChange={onChange}
+                placeholder="댓글 달기..."
+              />
+              <button
+                id="commentInput"
+                onClick={onSubmit}
+                className="commentUD unstyled-button"
+              >
+                게시
+              </button>
+            </form>
           </div>
         </div>
       </article>
