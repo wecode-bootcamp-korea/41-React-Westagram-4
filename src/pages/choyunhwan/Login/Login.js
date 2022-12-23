@@ -4,8 +4,10 @@ import "./Login.scss";
 import { useNavigate } from "react-router-dom";
 function Login() {
   const navigate = useNavigate();
+
   const [id, setId] = useState("");
   const [pw, setPw] = useState("");
+
   const saveUserId = event => {
     setId(event.target.value);
   };
@@ -14,6 +16,15 @@ function Login() {
   };
   console.log(id);
   console.log("pw", pw);
+
+  const active = id.includes("@") && pw.length > 4;
+  let block;
+  active ? (block = false) : (block = true);
+  let color;
+  block
+    ? (color = { backgroundColor: "#67B6FA" })
+    : (color = { backgroundColor: "#01376A" });
+
   return (
     <section className="loginpage">
       <div className="loginContainer">
@@ -22,6 +33,7 @@ function Login() {
         <input
           className="idinput"
           type="text"
+          //value={id}
           onChange={saveUserId}
           placeholder="전화번호, 사용자 이름 또는 이메일"
         />
@@ -30,13 +42,16 @@ function Login() {
           type="password"
           className="passwordinput"
           placeholder="비밀번호"
+          //value={pw}
           onChange={saveUserPw}
         />
 
         <button
           className="loginbtn"
+          disabled={block}
+          style={color}
           onClick={() => {
-            navigate("/Main");
+            navigate("/Mainchoyunhwan");
           }}
         >
           로그인
