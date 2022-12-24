@@ -4,7 +4,7 @@ import "./Login.scss";
 
 const Login = () => {
   const navigate = useNavigate();
-  const goToMain = () => navigate("/main");
+  const goToMain = () => navigate("/Mainleeseyoon");
 
   return (
     <div className="login">

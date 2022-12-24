@@ -40,7 +40,7 @@
 
   .logo-container {
     margin: 1em auto;
-    font-family: "Lobster", cursive;
+    font-family: "Lobster" cursive;
     font-size: 30px;
   }
 
@@ -53,32 +53,62 @@
     display: flex;
     flex-flow: column;
     height: 348px;
-  }
 
-  .loginForm input {
-    height: 36px;
-    margin-bottom: 5px;
-    padding: 0 10px;
-    border: 1px solid #dbdbdb;
-    border-radius: 3px;
-    background-color: #fafafa;
-    color: #8e8e8e;
-  }
+    input {
+      height: 36px;
+      margin-bottom: 5px;
+      padding: 0 10px;
+      border: 1px solid #dbdbdb;
+      border-radius: 3px;
+      background-color: #fafafa;
+      color: #8e8e8e;
+    }
 
-  .loginForm input:focus {
-    border: 1px solid #a8a8a8;
-    outline: none;
+    input:focus {
+      border: 1px solid #a8a8a8;
+      outline: none;
+    }
+
+    .user-id-warning,
+    .user-pw-warning {
+      color: #751717;
+      font-size: 12px;
+    }
+
+    button {
+      height: 33px;
+      margin: 5px 0;
+      border: none;
+      border-radius: 4px;
+      color: white;
+      font-weight: bold;
+    }
+
+    button:hover {
+      cursor: pointer;
+    }
+
+    button:focus {
+      outline: none;
+    }
+
+    p {
+      border-bottom: 1px solid #dbdbdb;
+      line-height: 0.1em;
+      text-align: center;
+
+      span {
+        padding: 0 20px;
+        background-color: white;
+        color: #8f8f8f;
+        font-size: 13px;
+      }
+    }
   }
 
   .user-id,
   .user-pw {
     width: 100%;
-  }
-
-  .loginForm .user-id-warning,
-  .loginForm .user-pw-warning {
-    color: #751717;
-    font-size: 12px;
   }
 
   .warning-invisible {
@@ -91,36 +121,6 @@
 
   .btn-blue {
     background-color: #0095f6;
-  }
-
-  .loginForm button {
-    height: 33px;
-    margin: 5px 0;
-    border: none;
-    border-radius: 4px;
-    color: white;
-    font-weight: bold;
-  }
-
-  .loginForm button:hover {
-    cursor: pointer;
-  }
-
-  .loginForm button:focus {
-    outline: none;
-  }
-
-  .loginForm p {
-    border-bottom: 1px solid #dbdbdb;
-    line-height: 0.1em;
-    text-align: center;
-  }
-
-  .loginForm p span {
-    padding: 0 20px;
-    background-color: white;
-    color: #8f8f8f;
-    font-size: 13px;
   }
 
   .forgotpw-container {
