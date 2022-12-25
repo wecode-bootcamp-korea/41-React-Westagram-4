@@ -2,6 +2,8 @@ import React from "react";
 import "./Main.scss";
 import Nav from "./components/Nav/Nav";
 import Article from "./components/Article/Article";
+import Footer from "./components/Footer/Footer";
+import MyProfile from "./components/MyProfile/MyProfile";
 
 const Main = () => {
   return (
@@ -13,17 +15,7 @@ const Main = () => {
         </section>
         <section className="main-right-wrap">
           <div className="main-right">
-            <div className="profile-wrap">
-              <div className="profile-box">
-                <img id="profile-img" alt="" />
-              </div>
-              <div className="name-wrap">
-                <div className="nickname font-size-18 font-weight-600">
-                  seyoonleee
-                </div>
-                <div className="name font-size-18 aacy">이세윤</div>
-              </div>
-            </div>
+            <MyProfile />
             <div className="container-wrap">
               <div className="story-container">
                 <div className="space-between font-weight-600">
@@ -182,55 +174,7 @@ const Main = () => {
                 </div>
               </div>
             </div>
-            <footer className="footer-wrap">
-              <ul>
-                <li>
-                  <a href="">Instagram 정보</a>
-                  {" · "}
-                </li>
-                <li>
-                  <a href="">지원</a>
-                  {" · "}
-                </li>
-                <li>
-                  <a href="">홍보 센터</a>
-                  {" · "}
-                </li>
-                <li>
-                  <a href="">API</a>
-                  {" · "}
-                </li>
-                <li>
-                  <a href="">채용 정보</a>
-                  {" · "}
-                </li>
-                <li>
-                  <a href="">개인정보처리방침</a>
-                  {" · "}
-                </li>
-                <li>
-                  <a href="">약관</a>
-                  {" · "}
-                </li>
-                <li>
-                  <a href="">디렉터리</a>
-                  {" · "}
-                </li>
-                <li>
-                  <a href="">프로필</a>
-                  {" · "}
-                </li>
-                <li>
-                  <a href="">해시태그</a>
-                  {" · "}
-                </li>
-                <li>
-                  <a href="">언어</a>
-                  {" · "}
-                </li>
-              </ul>
-              <div>2022 INSTAGRAM</div>
-            </footer>
+            <Footer />
           </div>
         </section>
       </main>
