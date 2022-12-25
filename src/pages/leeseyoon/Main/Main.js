@@ -1,6 +1,5 @@
 import React from "react";
 import "./Main.scss";
-import "../styles/common.scss";
 import Nav from "./components/Nav/Nav";
 
 const Main = () => {
