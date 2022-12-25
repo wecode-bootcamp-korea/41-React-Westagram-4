@@ -101,12 +101,12 @@ article {
 
       button {
         border: 0px;
-        opacity: 1;
         background-color: #ffffff;
+        color: #0095f6;
         cursor: pointer;
 
         &:disabled {
-          opacity: 0.4;
+          opacity: 0.3;
           cursor: default;
         }
       }
@@ -128,10 +128,6 @@ article {
 
 .font-weight-600 {
   font-weight: 600;
-}
-
-.font-blue {
-  color: #0095f6;
 }
 
 .new-story-img {

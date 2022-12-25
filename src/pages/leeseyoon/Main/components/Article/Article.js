@@ -1,6 +1,15 @@
+import React, { useState } from "react";
 import "./Article.scss";
 
 const Article = () => {
+  const [newComment, setNewComment] = useState("");
+  const [postValid, setPostValid] = useState(true);
+
+  const handleNewComment = e => {
+    setNewComment(e.target.value);
+    setPostValid(e.target.value ? false : true);
+  };
+
   return (
     <article>
       <div className="feed-header">
@@ -63,11 +72,13 @@ const Article = () => {
         </div>
         <form onsubmit="return false;" action="" className="new-comment">
           <i className="fa-regular fa-face-smile" />
-          <input type="text" placeholder="댓글 달기..." />
-          <button
-            className="posting font-blue font-weight-600 postingDeactivity"
-            disabled={false}
-          >
+          <input
+            type="text"
+            placeholder="댓글 달기..."
+            value={newComment}
+            onChange={handleNewComment}
+          />
+          <button className="font-weight-600" disabled={postValid}>
             게시
           </button>
         </form>

@@ -148,10 +148,6 @@ main {
     white-space: nowrap;
   }
 
-  .font-blue {
-    color: #0095f6;
-  }
-
   .new-story-list-wrap {
     display: flex;
     /* border: 0.1px solid black; */
@@ -328,16 +324,6 @@ main {
   .posting {
     border: 0px;
     background-color: #ffffff;
-  }
-
-  .postingDeactivity {
-    opacity: 0.4;
-    cursor: default;
-  }
-
-  .postingActivity {
-    opacity: 1;
-    cursor: pointer;
   }
 
   .comment {
