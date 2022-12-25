@@ -1,7 +1,8 @@
 @import "../../../styles/common";
-@import "../../jinwookim/Main/Feeds.scss";
+@import "../../jinwookim/Main/Feeds";
 
 .main-instagram-text {
+  /* stylelint-disable-next-line string-quotes */
   font-family: "Lobster", sans-serif;
   font-size: 20px;
 }
@@ -155,6 +156,11 @@ article img {
   }
 }
 
+.contents-body {
+  height: 120px;
+  overflow: auto;
+}
+
 .contents-header {
   display: flex;
   justify-content: space-between;
@@ -206,6 +212,7 @@ article img {
   border-left: none;
 }
 
+/* stylelint-disable-next-line selector-class-pattern */
 .btnActive {
   position: absolute;
   right: 0;
@@ -215,6 +222,7 @@ article img {
   color: blue;
 }
 
+/* stylelint-disable-next-line selector-class-pattern */
 .newDiv {
   @include flexCenter(space-between, center);
   height: 23px;

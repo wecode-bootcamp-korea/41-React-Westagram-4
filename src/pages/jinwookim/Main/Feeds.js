@@ -1,4 +1,3 @@
-import { clearConfigCache } from "prettier";
 import React, { useState } from "react";
 import CommentList from "./CommentList";
 
@@ -11,22 +10,20 @@ const Feeds = () => {
   };
 
   const posting = event => {
-    event.preventDefault(); // default로 submit되는것을 막기위해 event.preventDefault() 사용
+    event.preventDefault();
+    setCommentArr([
+      ...commentArr,
+      {
+        userName: "guest",
+        comment: commentArr,
+        id: Math.ceil(Math.random() * 100),
+      },
+    ]);
     const copyCommentArr = [...commentArr];
     copyCommentArr.push(comment);
     setCommentArr(copyCommentArr);
     setComment("");
   };
-
-  // const enterEventHandler = event => {
-  //   event.preventDefault();
-  //   if (event.key === "Enter") {
-  //     const copyCommentArr = [...commentArr];
-  //     copyCommentArr.push(comment);
-  //     setCommentArr(copyCommentArr);
-  //     setComment("");
-  //   }
-  // };
 
   return (
     <div className="feeds">
@@ -89,18 +86,21 @@ const Feeds = () => {
               </div>
               <i className="fa-regular fa-heart" />
             </div>
-
             <span className="contents-body-time">42분 전</span>
             <div className="contents-body-comments" />
             <ul>
               {commentArr.map((comment, i) => (
-                <CommentList key={i} comment={comment} />
+                <CommentList
+                  key={i}
+                  comment={comment}
+                  id={comment.id}
+                  setCommentArr={setCommentArr}
+                  commentArr={commentArr}
+                />
               ))}
             </ul>
           </div>
         </div>
-
-        {/* <form className="feeds-comment" /> */}
         <form>
           <div className="input-box">
             <input
@@ -108,7 +108,7 @@ const Feeds = () => {
               type="text"
               placeholder="댓글 달기 ..."
               onChange={AddComment}
-              // onKeyUp={enterEventHandler} // form 태그에 Enter 기능이 포함되어 있기 때문에 주석처리
+              value={comment}
             />
             <button
               type="submit"
