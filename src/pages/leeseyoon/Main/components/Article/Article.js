@@ -64,7 +64,10 @@ const Article = () => {
         <form onsubmit="return false;" action="" className="new-comment">
           <i className="fa-regular fa-face-smile" />
           <input type="text" placeholder="댓글 달기..." />
-          <button className="posting font-blue font-weight-600 postingDeactivity">
+          <button
+            className="posting font-blue font-weight-600 postingDeactivity"
+            disabled={false}
+          >
             게시
           </button>
         </form>
