@@ -7,7 +7,7 @@ const Nav = () => {
         <img
           className="icon-logo height-20px nav-icon"
           src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/logo.png"
-          alt=""
+          alt="logo"
         />
         <span className="text-logo">Westagram</span>
       </div>
@@ -15,21 +15,20 @@ const Nav = () => {
         <input className="search" type="text" />
       </div>
       <div className="right">
-        <i className="bi bi-brightness-high-fill" id="toggleDark" />
         <img
           className="icon-logo height-20px nav-icon"
           src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/explore.png"
-          alt=""
+          alt="explore"
         />
         <img
           className="icon-logo height-20px nav-icon"
           src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/heart.png"
-          alt=""
+          alt="heart"
         />
         <img
           className="icon-logo height-20px nav-icon"
           src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/profile.png"
-          alt=""
+          alt="profile"
         />
       </div>
     </nav>
