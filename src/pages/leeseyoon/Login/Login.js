@@ -8,9 +8,17 @@ const Login = () => {
 
   const [userId, setUserId] = useState("");
   const [userPw, setUserPw] = useState("");
+  const [idValid, setIdValid] = useState(false);
+  const [pwValid, setPwValid] = useState(false);
 
-  const saveUserId = e => setUserId(e.target.value);
-  const saveUserPw = e => setUserPw(e.target.value);
+  const handleId = e => {
+    setUserId(e.target.value);
+    setIdValid(e.target.value.includes("@") ? true : false);
+  };
+  const handlePw = e => {
+    setUserPw(e.target.value);
+    setPwValid(e.target.value.length >= 5 ? true : false);
+  };
 
   return (
     <div className="login">
@@ -24,16 +32,20 @@ const Login = () => {
             type="text"
             placeholder="전화번호, 사용자 이름 또는 이메일"
             value={userId}
-            onChange={saveUserId}
+            onChange={handleId}
           />
           <input
             className="user-pw"
             type="password"
             placeholder="비밀번호"
             value={userPw}
-            onChange={saveUserPw}
+            onChange={handlePw}
           />
-          <button className="login-btn btn-light-blue" onClick={goToMain}>
+          <button
+            className="login-btn btn-light-blue"
+            onClick={goToMain}
+            disabled={idValid && pwValid ? false : true}
+          >
             로그인
           </button>
         </form>
