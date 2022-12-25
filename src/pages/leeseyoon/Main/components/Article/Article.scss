@@ -120,15 +120,12 @@ article {
       /* height: calc(100% - 29.5px); */
       width: 400px;
       overflow: hidden;
+      list-style: none;
       text-overflow: ellipsis;
       white-space: nowrap;
 
-      li {
-        list-style: none;
-
-        strong {
-          font-weight: bold;
-        }
+      strong {
+        font-weight: bold;
       }
     }
   }

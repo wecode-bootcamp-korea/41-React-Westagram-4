@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Article.scss";
+import Comment from "./components/Comment";
 
 const Article = () => {
   const dummyComments = [
@@ -84,16 +85,9 @@ const Article = () => {
         </div>
 
         <div className="comments">
-          <div className="comment">
-            {comments.map((obj, i) => {
-              return (
-                <li key={i}>
-                  <strong>{obj.name} </strong>
-                  <span>{obj.comment}</span>
-                </li>
-              );
-            })}
-          </div>
+          {comments.map((obj, i) => {
+            return <Comment obj={obj} i={i} />;
+          })}
         </div>
         <form onsubmit="return false;" action="" className="new-comment">
           <i className="fa-regular fa-face-smile" />
