@@ -122,6 +122,14 @@ article {
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
+
+      li {
+        list-style: none;
+
+        strong {
+          font-weight: bold;
+        }
+      }
     }
   }
 }

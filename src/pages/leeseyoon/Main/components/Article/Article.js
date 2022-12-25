@@ -2,12 +2,31 @@ import React, { useState } from "react";
 import "./Article.scss";
 
 const Article = () => {
+  const dummyComments = [
+    { name: "Syndi", comment: "Cool!!😀" },
+    { name: "Antonietta", comment: "Hello 😎" },
+    {
+      name: "Gaston",
+      comment: "React 👍",
+    },
+    {
+      name: "Henry",
+      comment: "Good 😊",
+    },
+  ];
   const [newComment, setNewComment] = useState("");
   const [postValid, setPostValid] = useState(true);
+  const [comments, setComments] = useState(dummyComments);
+  const myName = "seyoonleee";
 
   const handleNewComment = e => {
     setNewComment(e.target.value);
     setPostValid(e.target.value ? false : true);
+  };
+  const onSubmit = e => {
+    e.preventDefault();
+    setComments([...comments, { name: myName, comment: newComment }]);
+    setNewComment("");
   };
 
   return (
@@ -66,8 +85,14 @@ const Article = () => {
 
         <div className="comments">
           <div className="comment">
-            <strong className="">Sydni </strong>
-            <span>Cool!!✨</span>
+            {comments.map((obj, i) => {
+              return (
+                <li key={i}>
+                  <strong>{obj.name} </strong>
+                  <span>{obj.comment}</span>
+                </li>
+              );
+            })}
           </div>
         </div>
         <form onsubmit="return false;" action="" className="new-comment">
@@ -78,7 +103,11 @@ const Article = () => {
             value={newComment}
             onChange={handleNewComment}
           />
-          <button className="font-weight-600" disabled={postValid}>
+          <button
+            className="font-weight-600"
+            disabled={postValid}
+            onClick={onSubmit}
+          >
             게시
           </button>
         </form>
