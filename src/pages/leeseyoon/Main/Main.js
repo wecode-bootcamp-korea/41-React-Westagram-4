@@ -1,6 +1,5 @@
 import React from "react";
 import "./Main.scss";
-// import { feedData } from "../../../public/data/data";
 
 const Main = () => {
   return (
