@@ -4,30 +4,38 @@ import Comment from "./components/Comment";
 
 const Article = () => {
   const dummyComments = [
-    { name: "Syndi", comment: "Cool!!😀" },
-    { name: "Antonietta", comment: "Hello 😎" },
+    { id: 1, name: "Syndi", comment: "Cool!!😀" },
+    { id: 2, name: "Antonietta", comment: "Hello 😎" },
     {
+      id: 3,
       name: "Gaston",
       comment: "React 👍",
     },
-    {
-      name: "Henry",
-      comment: "Good 😊",
-    },
+    { id: 4, name: "Henry", comment: "Good 😊" },
   ];
+  // console.log(dummyComments);
   const [newComment, setNewComment] = useState("");
   const [postValid, setPostValid] = useState(true);
   const [comments, setComments] = useState(dummyComments);
+  // console.log(comments);
   const myName = "seyoonleee";
 
   const handleNewComment = e => {
     setNewComment(e.target.value);
     setPostValid(e.target.value ? false : true);
   };
+
   const onSubmit = e => {
     e.preventDefault();
-    setComments([...comments, { name: myName, comment: newComment }]);
+    setComments([
+      ...comments,
+      { id: Date.now(), name: myName, comment: newComment },
+    ]);
     setNewComment("");
+  };
+
+  const removeComment = id => {
+    setComments(comments.filter(comment => comment.id !== id));
   };
 
   return (
@@ -85,8 +93,10 @@ const Article = () => {
         </div>
 
         <div className="comments">
-          {comments.map((obj, i) => {
-            return <Comment obj={obj} i={i} />;
+          {comments.map(obj => {
+            return (
+              <Comment key={obj.id} obj={obj} removeComment={removeComment} />
+            );
           })}
         </div>
         <form onsubmit="return false;" action="" className="new-comment">
