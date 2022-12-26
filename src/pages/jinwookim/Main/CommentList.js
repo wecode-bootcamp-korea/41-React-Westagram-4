@@ -1,15 +1,16 @@
 import React from "react";
 
-const CommentList = ({ comment, id, commentArr, setCommentArr }) => {
+const CommentList = ({ comment, commentArr, setCommentArr }) => {
   const deleteComment = id => {
-    setCommentArr(commentArr.filter(user => user.id !== id));
+    const filteredData = commentArr.filter(c => c.id !== comment.id);
+    setCommentArr(filteredData);
   };
   return (
     <li id="commentList">
-      <span className="myName">김진우</span>
-      <span> {comment} </span>
+      <span className="myName">{comment.userName}</span>
+      <span> {comment.comment} </span>
       <button>좋아요</button>
-      <button className="deleteBtn" onClick={() => deleteComment(id)}>
+      <button className="deleteBtn" onClick={() => deleteComment(comment.id)}>
         삭제
       </button>
     </li>

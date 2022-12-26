@@ -14,14 +14,11 @@ const Feeds = () => {
     setCommentArr([
       ...commentArr,
       {
-        userName: "guest",
-        comment: commentArr,
-        id: Math.ceil(Math.random() * 100),
+        userName: "김진우",
+        comment: comment,
+        id: Math.ceil(Math.random() * 100), //useRef() 를 이용하는 것이 더 좋음.
       },
     ]);
-    const copyCommentArr = [...commentArr];
-    copyCommentArr.push(comment);
-    setCommentArr(copyCommentArr);
     setComment("");
   };
 
@@ -96,6 +93,7 @@ const Feeds = () => {
                   id={comment.id}
                   setCommentArr={setCommentArr}
                   commentArr={commentArr}
+                  userName={comment.userName}
                 />
               ))}
             </ul>
