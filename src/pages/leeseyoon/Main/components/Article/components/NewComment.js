@@ -5,12 +5,12 @@ const NewComment = ({ comments, setComments }) => {
   const myName = "seyoonleee";
 
   const [newComment, setNewComment] = useState("");
-  const [postValid, setPostValid] = useState(true);
-  // console.log("postValid", postValid);
+  const [disabled, setDisabled] = useState(true);
+  // console.log("disabled", disabled);
 
   const handleNewComment = e => {
     setNewComment(e.target.value);
-    setPostValid(e.target.value ? false : true);
+    setDisabled(e.target.value ? false : true);
   };
 
   const onSubmit = e => {
@@ -20,7 +20,7 @@ const NewComment = ({ comments, setComments }) => {
       { id: Date.now(), name: myName, comment: newComment },
     ]);
     setNewComment("");
-    setPostValid(true);
+    setDisabled(true);
   };
 
   return (
@@ -34,7 +34,7 @@ const NewComment = ({ comments, setComments }) => {
       />
       <button
         className="font-weight-600"
-        disabled={postValid}
+        disabled={disabled}
         onClick={onSubmit}
       >
         게시
