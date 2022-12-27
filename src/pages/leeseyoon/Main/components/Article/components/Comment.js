@@ -7,9 +7,14 @@ const Comment = ({ obj, removeComment }) => {
 
   return (
     <li className="comment">
-      <strong>{obj.name}</strong>
-      <span>{obj.comment}</span>
-      <button onClick={() => removeComment(obj.id)}>삭제</button>
+      <strong className="name">{obj.name}</strong>
+      <span className="content">{obj.comment}</span>
+      <img
+        className="delete"
+        onClick={() => removeComment(obj.id)}
+        src="./images/leeseyoon/delete.png"
+        alt="delete button"
+      />
     </li>
   );
 };
