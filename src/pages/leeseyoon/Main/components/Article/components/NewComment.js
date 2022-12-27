@@ -3,10 +3,8 @@ import "./Comment.scss";
 
 const NewComment = ({ comments, setComments }) => {
   const myName = "seyoonleee";
-
   const [newComment, setNewComment] = useState("");
   const [disabled, setDisabled] = useState(true);
-  // console.log("disabled", disabled);
 
   const handleNewComment = e => {
     setNewComment(e.target.value);

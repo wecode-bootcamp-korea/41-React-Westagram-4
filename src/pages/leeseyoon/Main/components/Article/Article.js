@@ -14,24 +14,7 @@ const Article = () => {
     },
     { id: 4, name: "Henry", comment: "Good 😊" },
   ];
-  // console.log(dummyComments);
-  // const [newComment, setNewComment] = useState("");
-  // const [postValid, setPostValid] = useState(true);
   const [comments, setComments] = useState(dummyComments);
-  // console.log(comments);
-  // const handleNewComment = e => {
-  //   setNewComment(e.target.value);
-  //   setPostValid(e.target.value ? false : true);
-  // };
-
-  // const onSubmit = e => {
-  //   e.preventDefault();
-  //   setComments([
-  //     ...comments,
-  //     { id: Date.now(), name: myName, comment: newComment },
-  //   ]);
-  //   setNewComment("");
-  // };
 
   const removeComment = id => {
     setComments(comments.filter(comment => comment.id !== id));
@@ -95,7 +78,6 @@ const Article = () => {
             );
           })}
         </div>
-        {console.log("NewComment render!!!!!!!!!!!!!!")}
         <NewComment comments={comments} setComments={setComments} />
       </div>
     </article>
