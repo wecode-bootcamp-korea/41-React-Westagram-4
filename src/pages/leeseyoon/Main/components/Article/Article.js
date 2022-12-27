@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Article.scss";
 import Comment from "./components/Comment";
+import NewComment from "./components/NewComment";
 
 const Article = () => {
   const dummyComments = [
@@ -14,25 +15,23 @@ const Article = () => {
     { id: 4, name: "Henry", comment: "Good 😊" },
   ];
   // console.log(dummyComments);
-  const [newComment, setNewComment] = useState("");
-  const [postValid, setPostValid] = useState(true);
+  // const [newComment, setNewComment] = useState("");
+  // const [postValid, setPostValid] = useState(true);
   const [comments, setComments] = useState(dummyComments);
   // console.log(comments);
-  const myName = "seyoonleee";
+  // const handleNewComment = e => {
+  //   setNewComment(e.target.value);
+  //   setPostValid(e.target.value ? false : true);
+  // };
 
-  const handleNewComment = e => {
-    setNewComment(e.target.value);
-    setPostValid(e.target.value ? false : true);
-  };
-
-  const onSubmit = e => {
-    e.preventDefault();
-    setComments([
-      ...comments,
-      { id: Date.now(), name: myName, comment: newComment },
-    ]);
-    setNewComment("");
-  };
+  // const onSubmit = e => {
+  //   e.preventDefault();
+  //   setComments([
+  //     ...comments,
+  //     { id: Date.now(), name: myName, comment: newComment },
+  //   ]);
+  //   setNewComment("");
+  // };
 
   const removeComment = id => {
     setComments(comments.filter(comment => comment.id !== id));
@@ -73,7 +72,6 @@ const Article = () => {
             <i className="fa-regular fa-bookmark" />
           </div>
         </section>
-
         <div className="like-wrap">
           <div className="like-poeple-img-box">
             <img
@@ -87,11 +85,9 @@ const Article = () => {
           <strong>외 6명이</strong>
           <span>이 좋아합니다.</span>
         </div>
-
         <div className="text">
           Temporibus et tenetur ut tenetur quam corrupti possimus.
         </div>
-
         <div className="comments">
           {comments.map(obj => {
             return (
@@ -99,22 +95,8 @@ const Article = () => {
             );
           })}
         </div>
-        <form onsubmit="return false;" action="" className="new-comment">
-          <i className="fa-regular fa-face-smile" />
-          <input
-            type="text"
-            placeholder="댓글 달기..."
-            value={newComment}
-            onChange={handleNewComment}
-          />
-          <button
-            className="font-weight-600"
-            disabled={postValid}
-            onClick={onSubmit}
-          >
-            게시
-          </button>
-        </form>
+        {console.log("NewComment render!!!!!!!!!!!!!!")}
+        <NewComment comments={comments} setComments={setComments} />
       </div>
     </article>
   );
