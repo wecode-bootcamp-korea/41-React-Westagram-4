@@ -45,7 +45,7 @@ const Login = () => {
           onClick={() => {
             navigate("/Mainkimyoon");
           }}
-          className="loginbtn"
+          className="loginbtn-act"
           style={{ opacity: loginIdPw ? "1" : "0.3" }}
           disabled={loginIdPw !== true}
         >

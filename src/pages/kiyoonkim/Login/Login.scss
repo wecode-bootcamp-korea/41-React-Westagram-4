@@ -21,7 +21,7 @@
 
     .id-input,
     .pw-input,
-    .loginbtn {
+    .loginbtn-act {
       box-sizing: border-box;
       width: 250px;
       border-radius: 3px;
@@ -40,11 +40,15 @@
       margin-bottom: 10px;
     }
 
-    .loginbtn {
+    .loginbtn-act {
       height: 30px;
       border: none;
       background-color: #0095f6;
       color: white;
+    }
+
+    .loginbtn-act:hover {
+      cursor: pointer;
     }
   }
 

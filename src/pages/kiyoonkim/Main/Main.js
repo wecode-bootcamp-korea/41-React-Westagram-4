@@ -1,63 +1,29 @@
 import React, { useState } from "react";
+import Nav from "../../../components/Nav/Nav";
 import "./Main.scss";
 import CommentList from "./Comment";
 
 function Mainkimkiyoon() {
-  const [comments, setComments] = useState();
-  let [userName] = useState("user");
-  let [feedComments, setFeedComments] = useState([]);
-  let [isValid, setIsValid] = useState(false);
+  const [comment, setComment] = useState("");
+  const [commentArr, setCommentArr] = useState([]);
+  const [isValid, setIsValid] = useState(false);
 
-  let post = e => {
-    const copyFeedComments = [...feedComments];
-    copyFeedComments.push(comments);
-    setFeedComments(copyFeedComments);
-    setComments("");
+  const post = e => {
+    setCommentArr([
+      ...commentArr,
+      {
+        userName: "jaguar",
+        comment: comment,
+        id: Math.ceil(Math.random() * 100),
+      },
+    ]);
+
+    setComment("");
   };
 
   return (
     <>
-      <nav>
-        <div className="topmenu">
-          <div className="toplogo">
-            <div>
-              <i className="fa fa-instagram" />
-            </div>
-            <div>
-              <span className="logoword">&nbsp;Westagram</span>
-            </div>
-          </div>
-          <div className="nav-center">
-            <div className="searchbar">
-              <i className="fa fa-search" />
-              <input type="text" placeholder="검색" />
-            </div>
-            <div className="suggestion-box">
-              <ul className="search-results" />
-            </div>
-          </div>
-          <div className="topright">
-            <div>
-              <img
-                src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/explore.png"
-                alt="search"
-              />
-            </div>
-            <div>
-              <img
-                src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/heart.png"
-                alt="likes"
-              />
-            </div>
-            <div>
-              <img
-                src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/profile.png"
-                alt="profile"
-              />
-            </div>
-          </div>
-        </div>
-      </nav>
+      <Nav />
       <main>
         <div className="feeds">
           <article>
@@ -65,7 +31,7 @@ function Mainkimkiyoon() {
               <div className="articles-header">
                 <div className="profiles">
                   <div className="profile-tn" />
-                  <div className="profile-id">canon_mj</div>
+                  <div className="profile-id">porsche</div>
                 </div>
                 <div className="article-setting">
                   <i className="fa fa-ellipsis-h" />
@@ -93,7 +59,7 @@ function Mainkimkiyoon() {
               <div className="num-likes">
                 <div className="firstlike-tn" />
                 <div className="firstlike-id">
-                  <span>aineworld</span>
+                  <span>bentley</span>
                 </div>
                 <div className="likes-status">
                   <p>
@@ -103,18 +69,21 @@ function Mainkimkiyoon() {
                 </div>
               </div>
               <div className="first-comment">
-                <div className="first-comment-id">danielarsham</div>
+                <div className="first-comment-id">porsche</div>
                 <div className="first-comment-content">
                   <span>Lorem ipsum dolor sit amet consectetur adipis</span>
                 </div>
               </div>
               <ul className="posted-comments">
-                {feedComments.map((commentArr, i) => {
+                {commentArr.map((comment, i) => {
                   return (
                     <CommentList
-                      userName={userName}
-                      userComment={commentArr}
+                      userName={comment.userName}
+                      comment={comment}
                       key={i}
+                      id={comment.id}
+                      setCommentArr={setCommentArr}
+                      commentArr={commentArr}
                     />
                   );
                 })}
@@ -125,9 +94,9 @@ function Mainkimkiyoon() {
                     className="new-comment-txt"
                     type="text"
                     placeholder="댓글 달기..."
-                    value={comments}
+                    value={comment}
                     onChange={e => {
-                      setComments(e.target.value);
+                      setComment(e.target.value);
                     }}
                     onKeyUp={e => {
                       e.target.value.length > 0
@@ -135,7 +104,7 @@ function Mainkimkiyoon() {
                         : setIsValid(false);
                     }}
                     onKeyPress={e => {
-                      if (e.key === "Enter") {
+                      if (isValid === true && e.key === "Enter") {
                         post();
                       }
                     }}
@@ -144,9 +113,11 @@ function Mainkimkiyoon() {
                 <div className="new-comment-post">
                   <button
                     className="new-comment-post-btn"
-                    disabled={isValid ? false : true}
+                    style={{
+                      color: comment.length > 0 ? "#0095F6" : "#B3DBFF",
+                    }}
                     onClick={post}
-                    style={{ color: isValid ? "#0095F6" : "#B3DBFF" }}
+                    disabled={comment.length > 0 ? false : true}
                   >
                     게시
                   </button>
@@ -159,8 +130,8 @@ function Mainkimkiyoon() {
           <div className="my-profile">
             <div className="my-profile-pic" />
             <div className="my-profile-account">
-              <p className="my-profile-name">wecode_bootcamp</p>
-              <p className="my-profile-des">weCode | wecode</p>
+              <p className="my-profile-name">porsche</p>
+              <p className="my-profile-des">We are #Sportmade.</p>
             </div>
           </div>
           <div className="stories">
@@ -171,22 +142,36 @@ function Mainkimkiyoon() {
             <div className="stories-1-box">
               <div className="stories-1-pic" />
               <div className="stories-1-account">
-                <p className="stories-1-name">wecode_41st</p>
-                <p className="stories-1-des">41기 계정</p>
+                <p className="stories-1-name">bmw</p>
+                <p className="stories-1-des">15분전</p>
               </div>
             </div>
             <div className="stories-2-box">
               <div className="stories-2-pic" />
               <div className="stories-2-account">
-                <p className="stories-2-name">wecode_41st</p>
-                <p className="stories-2-des">41기 계정</p>
+                <p className="stories-2-name">teslamotors</p>
+                <p className="stories-2-des">30분전</p>
               </div>
             </div>
             <div className="stories-3-box">
               <div className="stories-3-pic" />
               <div className="stories-3-account">
-                <p className="stories-3-name">wecode_41st</p>
-                <p className="stories-3-des">41기 계정</p>
+                <p className="stories-3-name">ferrari</p>
+                <p className="stories-3-des">40분전</p>
+              </div>
+            </div>
+            <div className="stories-4-box">
+              <div className="stories-4-pic" />
+              <div className="stories-4-account">
+                <p className="stories-4-name">astonmartinlagonda</p>
+                <p className="stories-4-des">45분전</p>
+              </div>
+            </div>
+            <div className="stories-5-box">
+              <div className="stories-5-pic" />
+              <div className="stories-5-account">
+                <p className="stories-5-name">lamborghini</p>
+                <p className="stories-5-des">50분전</p>
               </div>
             </div>
           </div>
@@ -199,14 +184,20 @@ function Mainkimkiyoon() {
               <div className="recommend-acct-box">
                 <div className="recommend-new-pic" />
                 <div className="recommend-new-account">
-                  <p className="recommend-new-name">wecode_41st</p>
+                  <p className="recommend-new-name">mercedesbenz</p>
                   <p className="recommend-new-des">회원님을 팔로우합니다.</p>
                 </div>
               </div>
               <div className="recommend-new-add">팔로우</div>
             </div>
           </div>
-          <div className="etc" />
+          <div className="etc">
+            <p>
+              소개·도움말·홍보 센터·API·채용
+              정보·개인정보처리방침·약관·위치·언어
+            </p>
+            <p>© 2022 INSTAGRAM FROM META</p>
+          </div>
         </div>
       </main>
     </>
