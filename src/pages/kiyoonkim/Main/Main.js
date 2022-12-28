@@ -1,150 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Nav from "../../../components/Nav/Nav";
 import "./Main.scss";
-import CommentList from "./Comment";
+import Feeds from "./Feeds";
 import { MAIN_RIGHT_ETC } from "./MainUI";
 
 function Mainkimkiyoon() {
-  const [comment, setComment] = useState("");
-  const [commentArr, setCommentArr] = useState([]);
-  const [isValid, setIsValid] = useState(false);
-
-  const post = e => {
-    setCommentArr([
-      ...commentArr,
-      {
-        userName: "jaguar",
-        comment: comment,
-        id: Math.ceil(Math.random() * 100),
-      },
-    ]);
-
-    setComment("");
-  };
-
   return (
     <>
       <Nav />
       <main>
-        <div className="feeds">
-          <article>
-            <div className="articles">
-              <div className="articles-header">
-                <div className="profiles">
-                  <div>
-                    <img
-                      src="https://i.pinimg.com/originals/6d/5f/73/6d5f73c51f5635703fca1a59bd6cbfa2.jpg"
-                      alt="profile-pic"
-                      className="profile-tn"
-                    />
-                  </div>
-                  <div className="profile-id">porsche</div>
-                </div>
-                <div className="article-setting">
-                  <i className="fa fa-ellipsis-h" />
-                </div>
-              </div>
-              <div>
-                <img
-                  src="https://images.unsplash.com/photo-1584060622420-0673aad46076?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1064&q=80"
-                  alt="post-pic"
-                  className="posts"
-                />
-              </div>
-              <div className="articles-fx">
-                <div className="articles-fx-left">
-                  <div className="likes">
-                    <i class="fa fa-heart-o" />
-                  </div>
-                  <div className="reply">
-                    <i class="fa fa-comment-o" />
-                  </div>
-                  <div className="share">
-                    <i class="fa fa-share-square-o" />
-                  </div>
-                </div>
-                <div className="articles-fx-right">
-                  <div className="bookmark">
-                    <i class="fa fa-bookmark-o" />
-                  </div>
-                </div>
-              </div>
-              <div className="num-likes">
-                <div>
-                  <img
-                    src="https://di-uploads-pod19.dealerinspire.com/bentleyofaustin/uploads/2020/10/download.png"
-                    alt="firstlike"
-                    className="firstlike-tn"
-                  />
-                </div>
-                <div className="firstlike-id">
-                  <span>bentley</span>
-                </div>
-                <div className="likes-status">
-                  <p>
-                    님 <span className="likes-status-num">외 10명</span>
-                    <span>이 좋아합니다.</span>
-                  </p>
-                </div>
-              </div>
-              <div className="first-comment">
-                <div className="first-comment-id">porsche</div>
-                <div className="first-comment-content">
-                  <span>Lorem ipsum dolor sit amet consectetur adipis</span>
-                </div>
-              </div>
-              <ul className="posted-comments">
-                {commentArr.map((comment, i) => {
-                  return (
-                    <CommentList
-                      userName={comment.userName}
-                      comment={comment}
-                      key={i}
-                      id={comment.id}
-                      setCommentArr={setCommentArr}
-                      commentArr={commentArr}
-                    />
-                  );
-                })}
-              </ul>
-              <div className="new-comment">
-                <div className="new-comment-content">
-                  <input
-                    className="new-comment-txt"
-                    type="text"
-                    placeholder="댓글 달기..."
-                    value={comment}
-                    onChange={e => {
-                      setComment(e.target.value);
-                    }}
-                    onKeyUp={e => {
-                      e.target.value.length > 0
-                        ? setIsValid(true)
-                        : setIsValid(false);
-                    }}
-                    onKeyPress={e => {
-                      if (isValid === true && e.key === "Enter") {
-                        post();
-                      }
-                    }}
-                  />
-                </div>
-                <div className="new-comment-post">
-                  <button
-                    className="new-comment-post-btn"
-                    style={{
-                      color: comment.length > 0 ? "#0095F6" : "#B3DBFF",
-                    }}
-                    onClick={post}
-                    disabled={comment.length > 0 ? false : true}
-                  >
-                    게시
-                  </button>
-                </div>
-              </div>
-            </div>
-          </article>
-        </div>
+        <Feeds />
         <div className="main-right">
           <div className="my-profile">
             <div className="my-profile-pic" />

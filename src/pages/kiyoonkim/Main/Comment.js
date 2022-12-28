@@ -10,7 +10,7 @@ const CommentList = ({ comment, commentArr, setCommentArr }) => {
   };
 
   return (
-    <li id="commentList">
+    <li>
       <div className="new-comment-added">
         <div>
           <span>
