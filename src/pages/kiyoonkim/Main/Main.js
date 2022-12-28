@@ -1,10 +1,20 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Nav from "../../../components/Nav/Nav";
 import "./Main.scss";
 import Feeds from "./Feeds";
 import { MAIN_RIGHT_ETC } from "./MainUI";
 
 function Mainkimkiyoon() {
+  const [stories, setStories] = useState([]);
+
+  useEffect(() => {
+    fetch("data/stories.json")
+      .then(res => res.json())
+      .then(data => {
+        setStories(data);
+      });
+  }, []);
+
   return (
     <>
       <Nav />
@@ -23,41 +33,23 @@ function Mainkimkiyoon() {
               <span className="stories-head-title">스토리</span>
               <span className="stories-head-seeall">모두보기</span>
             </div>
-            <div className="stories-1-box">
-              <div className="stories-1-pic" />
-              <div className="stories-1-account">
-                <p className="stories-1-name">bmw</p>
-                <p className="stories-1-des">15분전</p>
-              </div>
-            </div>
-            <div className="stories-2-box">
-              <div className="stories-2-pic" />
-              <div className="stories-2-account">
-                <p className="stories-2-name">teslamotors</p>
-                <p className="stories-2-des">30분전</p>
-              </div>
-            </div>
-            <div className="stories-3-box">
-              <div className="stories-3-pic" />
-              <div className="stories-3-account">
-                <p className="stories-3-name">ferrari</p>
-                <p className="stories-3-des">40분전</p>
-              </div>
-            </div>
-            <div className="stories-4-box">
-              <div className="stories-4-pic" />
-              <div className="stories-4-account">
-                <p className="stories-4-name">astonmartinlagonda</p>
-                <p className="stories-4-des">45분전</p>
-              </div>
-            </div>
-            <div className="stories-5-box">
-              <div className="stories-5-pic" />
-              <div className="stories-5-account">
-                <p className="stories-5-name">lamborghini</p>
-                <p className="stories-5-des">50분전</p>
-              </div>
-            </div>
+            {stories.map(content => {
+              return (
+                <div className="stories-box">
+                  <div>
+                    <img
+                      src={content.profilepic}
+                      alt="profilepic"
+                      className="stories-pic"
+                    />
+                  </div>
+                  <div className="stories-account">
+                    <p className="stories-name">{content.account}</p>
+                    <p className="stories-des">{content.timeposted}</p>
+                  </div>
+                </div>
+              );
+            })}
           </div>
           <div className="recommend">
             <div className="recommend-head">
