@@ -180,6 +180,10 @@ article img {
 
 .contents-body-first-line {
   display: flex;
+  span {
+    @include flexCenter(center, center);
+    margin-top: 5px;
+  }
 }
 
 .contents-body-heart {

@@ -1,22 +1,33 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Nav from "../../../components/Nav/Nav";
 import "./Main.scss";
 import Feeds from "./Feeds";
 import { ASIDE_LIST } from "./AsideList";
 
 function Mainkimjinwoo() {
+  const [feedList, setFeedList] = useState([]);
+
+  useEffect(() => {
+    fetch("./data/feedData.json")
+      .then(response => response.json())
+      .then(result => setFeedList(result));
+  }, []);
+
   return (
     <>
       <Nav />
       <div className="main">
-        <Feeds />
+        <div className="feedsList">
+          {feedList.map((data, i) => {
+            const feed = feedList[i];
+            return <Feeds key={i} feed={data} />;
+          })}
+        </div>
         <div className="main-right">
           <MainRightHeader />
           <Story />
           <Recommend />
           <p>
-            {/* Instagram 정보 . 지원 . 홍보 센터 . API . 채용 정보 .
-            개인정보처리방침 . 약관 . 디렉터리 . 프로필 . 해시태그 . 언어 */}
             {ASIDE_LIST.map(menuList => {
               return <span key={menuList.id}>{menuList.asideName}</span>;
             })}

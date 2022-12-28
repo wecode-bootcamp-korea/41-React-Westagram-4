@@ -9,7 +9,9 @@ const CommentList = ({ comment, commentArr, setCommentArr }) => {
     <li id="commentList">
       <span className="myName">{comment.userName}</span>
       <span> {comment.comment} </span>
-      <button>좋아요</button>
+      <span> {comment.nickname} </span>
+      <span> {comment.content} </span>
+      {/* <button className="likeBtn">좋아요</button> */}
       <button className="deleteBtn" onClick={() => deleteComment(comment.id)}>
         삭제
       </button>
