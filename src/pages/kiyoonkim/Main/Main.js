@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Nav from "../../../components/Nav/Nav";
 import "./Main.scss";
 import CommentList from "./Comment";
+import { MAIN_RIGHT_ETC } from "./MainUI";
 
 function Mainkimkiyoon() {
   const [comment, setComment] = useState("");
@@ -30,14 +31,26 @@ function Mainkimkiyoon() {
             <div className="articles">
               <div className="articles-header">
                 <div className="profiles">
-                  <div className="profile-tn" />
+                  <div>
+                    <img
+                      src="https://i.pinimg.com/originals/6d/5f/73/6d5f73c51f5635703fca1a59bd6cbfa2.jpg"
+                      alt="profile-pic"
+                      className="profile-tn"
+                    />
+                  </div>
                   <div className="profile-id">porsche</div>
                 </div>
                 <div className="article-setting">
                   <i className="fa fa-ellipsis-h" />
                 </div>
               </div>
-              <div className="posts" />
+              <div>
+                <img
+                  src="https://images.unsplash.com/photo-1584060622420-0673aad46076?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1064&q=80"
+                  alt="post-pic"
+                  className="posts"
+                />
+              </div>
               <div className="articles-fx">
                 <div className="articles-fx-left">
                   <div className="likes">
@@ -57,7 +70,13 @@ function Mainkimkiyoon() {
                 </div>
               </div>
               <div className="num-likes">
-                <div className="firstlike-tn" />
+                <div>
+                  <img
+                    src="https://di-uploads-pod19.dealerinspire.com/bentleyofaustin/uploads/2020/10/download.png"
+                    alt="firstlike"
+                    className="firstlike-tn"
+                  />
+                </div>
                 <div className="firstlike-id">
                   <span>bentley</span>
                 </div>
@@ -192,10 +211,12 @@ function Mainkimkiyoon() {
             </div>
           </div>
           <div className="etc">
-            <p>
-              소개·도움말·홍보 센터·API·채용
-              정보·개인정보처리방침·약관·위치·언어
-            </p>
+            <div>
+              {MAIN_RIGHT_ETC.map(info => {
+                return <span>{info.text}</span>;
+              })}
+            </div>
+
             <p>© 2022 INSTAGRAM FROM META</p>
           </div>
         </div>

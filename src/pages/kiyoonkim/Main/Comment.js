@@ -28,7 +28,10 @@ const CommentList = ({ comment, commentArr, setCommentArr }) => {
             </button>
           </div>
           <div>
-            <button className="comment-like-btn" onClick={() => setLike(true)}>
+            <button
+              className="comment-like-btn"
+              onClick={() => setLike(prevTrue => !prevTrue)}
+            >
               <i
                 className={like ? "fa fa-heart" : "fa fa-heart-o"}
                 style={{ color: like ? "red" : "black" }}
