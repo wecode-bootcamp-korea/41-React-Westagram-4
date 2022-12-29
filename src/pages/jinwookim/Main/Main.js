@@ -5,7 +5,7 @@ import Story from "./Story";
 import Recommend from "./Recommend";
 import "./Main.scss";
 import Feeds from "./Feeds";
-import { ASIDE_LIST } from "./AsideList";
+import { ASIDE_LIST } from "./constantData/AsideList";
 
 function Mainkimjinwoo() {
   const [feedList, setFeedList] = useState([]);
