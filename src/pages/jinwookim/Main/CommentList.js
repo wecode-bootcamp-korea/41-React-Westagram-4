@@ -11,7 +11,6 @@ const CommentList = ({ comment, commentArr, setCommentArr }) => {
       <span> {comment.comment} </span>
       <span> {comment.nickname} </span>
       <span> {comment.content} </span>
-      {/* <button className="likeBtn">좋아요</button> */}
       <button className="deleteBtn" onClick={() => deleteComment(comment.id)}>
         삭제
       </button>

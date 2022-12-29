@@ -1,5 +1,3 @@
-import React from "react";
-
 export const ASIDE_LIST = [
   { id: 1, asideName: "소개∙" },
   { id: 2, asideName: "도움말∙" },

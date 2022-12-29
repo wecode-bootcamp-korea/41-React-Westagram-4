@@ -11,7 +11,7 @@
 
   .feeds-header {
     padding: 10px;
-    @include flexCenter(space-between, center); //mixin 사용
+    @include flexCenter(space-between, center);
   }
 
   .feeds-header-icon {

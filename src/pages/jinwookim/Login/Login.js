@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 import "./Login.scss";
 import { useNavigate } from "react-router-dom";
@@ -10,7 +11,24 @@ function Loginkimjinwoo() {
   let [isActive, setIsActive] = useState(false);
   const navigate = useNavigate();
 
-  // Validation 검사해 줄 함수 필요
+  const fetchTest = () => {
+    fetch("http://10.58.52.136:3000/users/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json;charset=utf-8",
+      },
+      body: JSON.stringify({
+        email: userId,
+        password: userPw,
+      }),
+    })
+      .then(response => response.json())
+      .then(data => {
+        console.log(data);
+        localStorage.setItem("token", data.accessToken);
+      });
+  };
+
   const isValidLogin = () => {
     return userId.includes("@") && userPw.length > 4
       ? setIsActive(true)
@@ -31,7 +49,7 @@ function Loginkimjinwoo() {
 
   return (
     <>
-      <Nav></Nav>
+      <Nav />
       <div className="login-container">
         <p className="title">westagram</p>
 
@@ -54,7 +72,10 @@ function Loginkimjinwoo() {
         <button
           type="button"
           className={isActive ? "activeBtn" : "unActiveBtn"}
-          onClick={goToMain}
+          onClick={() => {
+            fetchTest();
+            goToMain();
+          }}
           disabled={userId === "" || userPw === "" ? true : false}
         >
           로그인
