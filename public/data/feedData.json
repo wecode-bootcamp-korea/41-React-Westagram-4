@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "profileImgSrc": "/images/choyunhwan/kim.jpeg",
+    "feedImgSrc": "/images/choyunhwan/aron.jpeg",
+    "comment": "LBJ님 외 10명이 좋아합니다."
+  },
+  {
+    "id": 2,
+    "profileImgSrc": "/images/choyunhwan/kim.jpeg",
+    "feedImgSrc": "/images/choyunhwan/carmelo.jpeg"
+  },
+  {
+    "id": 3,
+    "profileImgSrc": "/images/choyunhwan/kim.jpeg",
+    "feedImgSrc": "/images/choyunhwan/zach.jpeg"
+  }
+]

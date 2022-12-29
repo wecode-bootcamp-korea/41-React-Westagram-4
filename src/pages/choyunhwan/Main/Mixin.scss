@@ -1,0 +1,29 @@
+@mixin ColumFlex {
+  display: flex;
+  flex-direction: column;
+}
+@mixin imgCircle {
+  border-radius: 70%;
+  overflow: hidden;
+  height: 30px;
+}
+@mixin fontsize14top10 {
+  font-size: 14px;
+}
+@mixin margin5 {
+  margin-left: 5px;
+}
+@mixin margin($margin) {
+  margin: $margin;
+}
+
+@mixin ColumFlex {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flex($justify, $align) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}

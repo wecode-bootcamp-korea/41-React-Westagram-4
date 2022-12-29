@@ -1,7 +1,23 @@
 import React from "react";
+import Nav from "../../../components/Nav/Nav";
+import "./Main.scss";
+import Feeds from "../Components/Feeds";
+import Right from "../Components/Right";
+import Footer from "../Components/Footer";
 
-function Mainchoyunhwan() {
-  return <h1>This is Main</h1>;
+function Main() {
+  return (
+    <>
+      <Nav />
+
+      <main>
+        <Feeds />
+
+        <Right />
+      </main>
+      <Footer />
+    </>
+  );
 }
 
-export default Mainchoyunhwan;
+export default Main;
