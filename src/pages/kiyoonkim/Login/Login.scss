@@ -1,0 +1,68 @@
+.loginsection {
+  box-sizing: border-box;
+  width: 348px;
+  height: 377.992px;
+  margin: auto;
+  margin-top: 100px;
+  border: 1px solid #dbdbdb;
+
+  .logo {
+    margin-top: 30px;
+    margin-bottom: 50px;
+    font-family: Lobster, sans-serif;
+    font-size: 50px;
+    text-align: center;
+  }
+
+  .inputsection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .id-input,
+    .pw-input,
+    .loginbtn-act {
+      box-sizing: border-box;
+      width: 250px;
+      border-radius: 3px;
+    }
+
+    .id-input,
+    .pw-input {
+      height: 42px;
+      padding-left: 12px;
+      border: 1px solid #dbdbdb;
+      background-color: #fafafa;
+    }
+
+    .pw-input {
+      margin-top: 5px;
+      margin-bottom: 10px;
+    }
+
+    .loginbtn-act {
+      height: 30px;
+      border: none;
+      background-color: #0095f6;
+      color: white;
+    }
+
+    .loginbtn-act:hover {
+      cursor: pointer;
+    }
+  }
+
+  .lostpw {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+
+    .lostpwtxt {
+      color: #2b537f;
+      font-family: sans-serif;
+      font-size: 12px;
+      text-align: center;
+      text-decoration: none;
+    }
+  }
+}
