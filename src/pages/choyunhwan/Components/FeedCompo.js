@@ -1,14 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Comment from "./Comment";
-import FeedCompo from "./FeedCompo";
-function Feeds() {
-  const [feed, setFeed] = useState([]);
-  useEffect(() => {
-    fetch("./data/feedData.json")
-      .then(res => res.json())
-      .then(data => setFeed(data));
-  }, []);
-
+function FeedCompo({ feedData }) {
   const [comment, setComment] = useState("");
   const [commentLi, setCommentLi] = useState([]);
   const onChange = e => {
@@ -21,27 +13,15 @@ function Feeds() {
     setComment("");
   };
   return (
-    <div style={{ margin: "10px" }} className="feeds">
+    <div className="feeds">
       <article className="articleborder">
         <div className="articleTop">
-          <img
-            className="profile"
-            alt="profile"
-            src="./images/choyunhwan/tae.jpeg"
-          />
+          <img className="profile" src={feedData.profileImgSrc} alt="profile" />
           <p>LBJ</p>
-          <img
-            className="dot"
-            alt="profile"
-            src="./images/choyunhwan/more.png"
-          />
+          <img className="dot" alt="profile" />
         </div>
         <div className="articleCenter">
-          <img
-            className="feedimg"
-            alt="profile"
-            src="./images/choyunhwan/r662876_2_1296x729_16-9.jpg"
-          />
+          <img className="feedimg" alt="profile" src={feedData.feedImgSrc} />
           <div className="imoticon">
             <img
               id="heartIcon"
@@ -106,14 +86,9 @@ function Feeds() {
             </form>
           </div>
         </div>
-        <div>
-          {feed.map((feedData, key) => (
-            <FeedCompo key={key} feedData={feedData} />
-          ))}
-        </div>
       </article>
     </div>
   );
 }
 
-export default Feeds;
+export default FeedCompo;
