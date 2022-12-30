@@ -1,6 +1,7 @@
+/* stylelint-disable selector-class-pattern */
 /* stylelint-disable string-quotes */
 @import "../../../styles/common";
-@import "../../jinwookim/Main/Feeds";
+@import "../Main/feeds/Feeds";
 
 .main-instagram-text {
   font-family: "Lobster", sans-serif;
@@ -25,27 +26,34 @@ input#main-search:focus {
 .main {
   display: flex;
   justify-content: center;
-}
 
-.main-right {
-  width: 270px;
-  height: 500px;
+  .main-right {
+    width: 270px;
+    height: 500px;
 
-  .main-right-header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-  }
+    .main-right-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
 
-  .main-right-icon {
-    width: 50px;
-    margin-right: 15px;
-  }
+    .main-right-icon {
+      width: 50px;
+      margin-right: 15px;
+    }
 
-  p {
-    width: 200px;
-    color: #cdcdcd;
-    font-size: 13px;
+    .asideParagraph {
+      width: 200px;
+      margin-top: 15px;
+      color: #cdcdcd;
+      font-size: 13px;
+    }
+
+    .instagramCopyright {
+      margin-top: 10px;
+      color: rgb(172, 172, 172);
+      font-size: 13px;
+    }
   }
 }
 
@@ -216,7 +224,6 @@ article img {
   border-left: none;
 }
 
-/* stylelint-disable-next-line selector-class-pattern */
 .btnActive {
   position: absolute;
   right: 0;
@@ -226,7 +233,6 @@ article img {
   color: blue;
 }
 
-/* stylelint-disable-next-line selector-class-pattern */
 .newDiv {
   @include flexCenter(space-between, center);
   height: 23px;

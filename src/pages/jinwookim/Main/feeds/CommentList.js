@@ -1,4 +1,5 @@
 import React from "react";
+import "./Feeds";
 
 const CommentList = ({ comment, commentArr, setCommentArr }) => {
   const deleteComment = id => {

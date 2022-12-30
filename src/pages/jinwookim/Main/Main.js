@@ -4,7 +4,7 @@ import MainRightHeader from "./MainRightHeader";
 import Story from "./Story";
 import Recommend from "./Recommend";
 import "./Main.scss";
-import Feeds from "./Feeds";
+import Feeds from "./feeds/Feeds";
 import { ASIDE_LIST } from "./constantData/AsideList";
 
 function Mainkimjinwoo() {
@@ -29,12 +29,12 @@ function Mainkimjinwoo() {
           <MainRightHeader />
           <Story />
           <Recommend />
-          <p>
+          <p className="asideParagraph">
             {ASIDE_LIST.map(menuList => {
               return <span key={menuList.id}>{menuList.asideName}</span>;
             })}
           </p>
-          <p>© 2019 INSTAGRAM</p>
+          <p className="instagramCopyright">© 2022 INSTAGRAM</p>
         </div>
       </div>
     </>
