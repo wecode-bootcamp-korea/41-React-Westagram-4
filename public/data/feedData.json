@@ -1,0 +1,82 @@
+[
+    {
+        "id": 1,
+        "feedOwner":"canon_mj",
+        "writer": "순양",
+        "nickname": "canon-mj",
+        "feedImage": "./images/jinwookim/articleImage.png",
+        "feedComment": "위워크에서 진행한 베이킹 클래스...",
+        "comment": [
+            {
+                "id": 1,
+                "nickname": "로지텍:",
+                "content": "맛있겠다"
+            },
+            {
+                "id": 2,
+                "nickname": "애플:",
+                "content": "자세한 문의는 DM 부탁드려요🙏"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "feedOwner":"진도준",
+        "writer": "대영그룹",
+        "nickname": "진도준",
+        "feedImage": "./images/jinwookim/feed-background.jpeg",
+        "feedComment": "순양을 사겠습니다",
+        "comment": [
+            {
+                "id": 1,
+                "nickname": "하석진:",
+                "content": "안녕하세요"
+            },
+            {
+                "id": 2,
+                "nickname": "침착맨:",
+                "content": "ㅎㅎㅎㅎㅎㅎㅎ"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "feedOwner":"김진우",
+        "writer": "미라클인베스트",
+        "nickname": "김진우",
+        "feedImage": "./images/jinwookim/feed-background4.jpeg",
+        "feedComment": "안녕하세요 김진우 입니다.",
+        "comment": [
+            {
+                "id": 1,
+                "nickname": "뉴진스:",
+                "content": "Hype boy"
+            },
+            {
+                "id": 2,
+                "nickname": "블랙핑크:",
+                "content": "kill this love"
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "feedOwner":"진양철",
+        "writer": "순양증권",
+        "nickname": "진양철",
+        "feedImage": "./images/jinwookim/feed-background3.jpeg",
+        "feedComment": "매깨고",
+        "comment": [
+            {
+                "id": 1,
+                "nickname": "르세라핌:",
+                "content": "안티티티티 프레절프레절"
+            },
+            {
+                "id": 2,
+                "nickname": "트와이스:",
+                "content": "Tell me what you want"
+            }
+        ]
+    }
+]

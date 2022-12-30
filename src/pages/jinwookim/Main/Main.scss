@@ -1,0 +1,259 @@
+/* stylelint-disable selector-class-pattern */
+/* stylelint-disable string-quotes */
+@import "../../../styles/common";
+@import "../Main/feeds/Feeds";
+
+.main-instagram-text {
+  font-family: "Lobster", sans-serif;
+  font-size: 20px;
+}
+
+input#main-search:focus {
+  background-position: 5px;
+
+  &::placeholder {
+    color: transparent;
+  }
+}
+
+.exploror,
+.heart,
+.profile {
+  width: 24px;
+  margin-right: 18px;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+
+  .main-right {
+    width: 270px;
+    height: 500px;
+
+    .main-right-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .main-right-icon {
+      width: 50px;
+      margin-right: 15px;
+    }
+
+    .asideParagraph {
+      width: 200px;
+      margin-top: 15px;
+      color: #cdcdcd;
+      font-size: 13px;
+    }
+
+    .instagramCopyright {
+      margin-top: 10px;
+      color: rgb(172, 172, 172);
+      font-size: 13px;
+    }
+  }
+}
+
+article img {
+  width: 500px;
+  height: 500px;
+}
+
+.story {
+  width: 270px;
+  height: 200px;
+  margin-bottom: 15px;
+  padding: 15px;
+  border: 1px solid #d5d5d5;
+  border-radius: 3px;
+  font-size: 14px;
+
+  .story-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+  }
+
+  .story-first-icons {
+    display: flex;
+  }
+  .story-first-name-time {
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+  }
+
+  .story-second-icons {
+    display: flex;
+  }
+
+  .story-second-name-time {
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+  }
+  .story-third-icons {
+    display: flex;
+  }
+
+  .story-third-name-time {
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+  }
+
+  img {
+    width: 37px;
+    margin: 5px;
+  }
+}
+
+.recommend {
+  width: 270px;
+  height: 175px;
+  padding: 15px;
+  border: 1px solid #d5d5d5;
+  border-radius: 3px;
+  font-size: 14px;
+
+  .recommend-header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .recommend:nth-child(1) {
+    color: $border-color;
+  }
+
+  .recommend-first-icons {
+    @include flexCenter(space-between, center);
+  }
+
+  .recommend-first-name-time {
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+  }
+
+  .recommend-second-icons {
+    @include flexCenter(space-between, center);
+  }
+
+  .recommend-second-name-time {
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+  }
+
+  .recommend-third-icons {
+    @include flexCenter(space-between, center);
+  }
+
+  .recommend-third-name-time {
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+  }
+
+  img {
+    width: 32px;
+    margin: 5px;
+  }
+}
+
+.contents-body {
+  height: 120px;
+  overflow: auto;
+}
+
+.contents-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.contents-icons {
+  display: flex;
+  gap: 10px;
+  margin-top: 7px;
+}
+
+.contents-body-icon {
+  width: 18px;
+  margin-right: 5px;
+}
+
+.contents-body-first-line {
+  display: flex;
+  span {
+    @include flexCenter(center, center);
+    margin-top: 5px;
+  }
+}
+
+.contents-body-heart {
+  display: flex;
+  justify-content: space-between;
+}
+
+.contents-body-time {
+  color: rgb(172, 172, 172);
+  font-size: 15px;
+}
+.contents-body-comments {
+  display: flex;
+  justify-content: space-between;
+  color: rgb(150, 150, 150);
+  font-size: 14px;
+}
+
+.comment-input {
+  display: flex;
+  align-items: center;
+  width: 500px;
+
+  margin-top: 10px;
+  margin-left: -10px;
+  padding: 10px 10px 10px 10px;
+  border-top: 1px solid gainsboro;
+  border-right: none;
+  border-bottom: none;
+  border-left: none;
+}
+
+.btnActive {
+  position: absolute;
+  right: 0;
+  bottom: 10px;
+  border: none;
+  background-color: transparent;
+  color: blue;
+}
+
+.newDiv {
+  @include flexCenter(space-between, center);
+  height: 23px;
+}
+
+.like-button {
+  width: 20px;
+  height: 20px;
+  border: none;
+  background-color: white;
+}
+
+.like-heart {
+  height: 18px;
+  margin-right: 100px;
+}
+
+.delete-button {
+  margin-left: 20px;
+}
+
+.comment-id {
+  font-weight: bold;
+}
