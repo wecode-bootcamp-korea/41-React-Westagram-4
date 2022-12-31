@@ -1,0 +1,27 @@
+main {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  justify-content: center;
+  padding-top: 35px;
+  background-color: #fafafa;
+
+  .feed-container {
+    width: 550px;
+  }
+
+  .main-right-wrap {
+    margin-left: 32px;
+
+    .main-right {
+      position: sticky;
+      top: 83.5px;
+      width: 300px;
+
+      .container-wrap {
+        /* border: 0.1px solid black; */
+        margin: 18px auto;
+        background-color: #fafafa;
+      }
+    }
+  }
+}

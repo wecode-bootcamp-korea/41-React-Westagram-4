@@ -1,0 +1,33 @@
+.comment {
+  display: flex;
+  width: 400px;
+  overflow: hidden;
+  list-style: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  .name {
+    margin-right: 10px;
+    font-weight: bold;
+  }
+
+  .content {
+    flex-grow: 1;
+  }
+
+  .delete {
+    display: none;
+    height: 13px;
+    padding: 0;
+    border: 0;
+  }
+
+  &:hover {
+    background-color: #f5f1f1fe;
+
+    .delete {
+      display: inline-block;
+      cursor: pointer;
+    }
+  }
+}
