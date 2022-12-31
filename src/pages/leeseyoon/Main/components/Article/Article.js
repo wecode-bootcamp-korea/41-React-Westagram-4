@@ -5,14 +5,14 @@ import NewComment from "./components/NewComment";
 
 const Article = () => {
   const dummyComments = [
-    { id: 1, name: "Syndi", comment: "Cool!!😀" },
-    { id: 2, name: "Antonietta", comment: "Hello 😎" },
+    { id: 1, name: "Syndi", content: "Cool!!😀" },
+    { id: 2, name: "Antonietta", content: "Hello 😎" },
     {
       id: 3,
       name: "Gaston",
-      comment: "React 👍",
+      content: "React 👍",
     },
-    { id: 4, name: "Henry", comment: "Good 😊" },
+    { id: 4, name: "Henry", content: "Good 😊" },
   ];
   const [comments, setComments] = useState(dummyComments);
 
@@ -72,9 +72,13 @@ const Article = () => {
           Temporibus et tenetur ut tenetur quam corrupti possimus.
         </div>
         <div className="comments">
-          {comments.map(obj => {
+          {comments.map(comment => {
             return (
-              <Comment key={obj.id} obj={obj} removeComment={removeComment} />
+              <Comment
+                key={comment.id}
+                comment={comment}
+                removeComment={removeComment}
+              />
             );
           })}
         </div>
